@@ -1,6 +1,6 @@
 *** Settings ***
 Documentation        Essa suíte testa o site da Amazon.com.br
-Resource    ../../RobotFramework/WebTesting/amazon_resources.robot
+Resource             amazon_resources.robot
 Test Setup           Abrir o navegador
 Test Teardown        Fechar o navegador
 *** Test Cases ***
@@ -19,7 +19,9 @@ Caso de Teste 02 - Pesquisa de produto
     [Documentation]    Esse teste verificar a busca de um produto
     [Tags]             busca_produtos    lista_busca
     Acessar a home page do site Amazon.com.br
-    Digitar o nome do produto "Console PlayStation 5" no campo de pesquisa
+    Digitar o nome do produto "Console Playstation 5" no campo de pesquisa
     Clicar no botão de pesquisa
-    O sistema o resultado da pesquisa se está listando o produto "Console PlayStation 5"
+    Verificar o resultado da pesquisa se está listando o produto "Console Playstation 5"
+
+
 

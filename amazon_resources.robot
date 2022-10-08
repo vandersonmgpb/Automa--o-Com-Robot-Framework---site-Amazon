@@ -42,16 +42,14 @@ Digitar o nome do produto "${PRODUTO}" no campo de pesquisa
 Clicar no botão de pesquisa
     Click Element    locator=nav-search-submit-button
 
-O sistema o resultado da pesquisa se está listando o produto "${PRODUTO}"
-    Wait Until Element Is Visible    locator=(//span[@class='a-size-base a-color-base a-text-normal'][contains(.,'${PRODUTO}')])[1]
-
+Verificar o resultado da pesquisa se está listando o produto "${PRODUTO}"
+    Wait Until Element Is Visible    locator=(//span[@class='a-size-base a-color-base a-text-normal'][contains(.,'${PRODUTO}')])[1]    
 
 # #            GHERKIN STEPS            # #
 
-Dado que estou na home page da Amazon.com.br
+Dado que estou na home page do site Amazon.com.br
     Acessar a home page do site Amazon.com.br
     Verificar se o titulo da pagina fica "Amazon.com.br | Tudo pra você, de A a Z."
-
 
 Quando acessar o menu "Livros"
      Entrar no menu "Livros"
@@ -64,3 +62,14 @@ E o texto "Livros" deve ser exibido na pagina
 
 E categoria Lojas em destaque "Indicações" deve ser exibida na pagina
     Verificar se aparece a categoria "Lojas em destaque"
+
+Quando pesquisar pelo produto "Console Playstation 5"
+    Digitar o nome do produto "Console Playstation 5" no campo de pesquisa
+    Clicar no botão de pesquisa
+
+Então o titulo da pagina deve ficar "Amazon.com.br : Console Playstation 5"
+    Verificar se o titulo da pagina fica "Amazon.com.br : Console Playstation 5"
+
+E um produto da linha "Console Playstation 5" deve ser mostrado na pagina
+    Verificar o resultado da pesquisa se está listando o produto "Console Playstation 5"
+    
